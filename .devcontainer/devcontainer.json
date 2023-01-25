@@ -1,0 +1,45 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json 
+{
+	"name": "Debian Python3 Development",
+	"context": ".",
+	"dockerFile": "Dockerfile",
+	"appPort": 8080,
+	"runArgs": [ "-u", "1000", "--name", "${localEnv:USER}_debian_py3_devcontainer"],
+	"remoteUser": "vscode",
+	"containerUser": "vscode",
+	"containerEnv": {
+		"GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}",
+		"GITHUB_USER": "${localEnv:GITHUB_USER}"
+	},
+	"mounts": [
+        "source=${localEnv:HOME}/github,target=/github,type=bind,consistency=cached"
+    ],
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.defaultInterpreterPath": "/usr/bin/python3",
+				"python.linting.enabled": true,
+				"python.linting.pylintEnabled": true,
+                "python.testing.unittestEnabled": true,
+                "python.formatting.provider": "black",
+                "python.linting.mypyEnabled": true,
+				"python.formatting.blackPath": "/usr/local/bin/black",
+				"python.linting.flake8Path": "/usr/local/bin/flake8",
+				"python.linting.isortPath": "/usr/local/bin/isort",
+				"python.linting.mypyPath": "/usr/local/bin/mypy",
+				"python.linting.pycodestylePath": "/usr/local/bin/pycodestyle",
+				"python.linting.pylintPath": "/usr/local/bin/pylint",
+				"extensions.autoUpdate": false,
+				"extensions.autoCheckUpdates": false
+			},
+			"extensions": [
+				"eamodio.gitlens",
+				"usernamehw.errorlens",
+				"ms-python.python",
+				"ms-python.isort",
+				"ms-python.black-formatter",
+				"ms-python.vscode-pylance"
+			]
+		}
+	}
+}

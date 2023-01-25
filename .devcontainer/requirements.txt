@@ -1,0 +1,28 @@
+boto3==1.24.87
+botocore==1.27.87
+aws-lambda-powertools[all]
+mypy-boto3==1.26.30
+mypy-boto3-dynamodb==1.26.24
+mypy-boto3-s3==1.26.0.post1
+boto3-stubs==1.26.30
+types-boto3==1.0.2
+
+# Linter
+flake8==5.0.4
+mypy==0.991
+isort==5.11.2
+black==22.12.0
+pylint==2.15.10
+
+# Tools
+pre-commit==2.20.0
+
+# Test
+Faker
+freezegun==1.2.2
+coverage==6.5.0
+moto==4.0.8
+deepdiff==5.8.1
+ipdb==0.13.11
+freezegun==1.2.2
+moto==4.0.8
