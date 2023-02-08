@@ -4,7 +4,12 @@
 	"context": ".",
 	"dockerFile": "Dockerfile",
 	"appPort": 8080,
-	"runArgs": [ "-u", "1000", "--name", "${localEnv:USER}_debian_py3_devcontainer"],
+	"runArgs": [
+		"-u",
+		"1000",
+		"--name",
+		"${localEnv:USER}_debian_py3_devcontainer"
+	],
 	"remoteUser": "vscode",
 	"containerUser": "vscode",
 	"containerEnv": {
@@ -12,17 +17,17 @@
 		"GITHUB_USER": "${localEnv:GITHUB_USER}"
 	},
 	"mounts": [
-        "source=${localEnv:HOME}/github,target=/github,type=bind,consistency=cached"
-    ],
+		"source=${localEnv:HOME}/eventbrite,target=/development/eventbrite,type=bind,consistency=cached"
+	],
 	"customizations": {
 		"vscode": {
 			"settings": {
 				"python.defaultInterpreterPath": "/usr/bin/python3",
 				"python.linting.enabled": true,
 				"python.linting.pylintEnabled": true,
-                "python.testing.unittestEnabled": true,
-                "python.formatting.provider": "black",
-                "python.linting.mypyEnabled": true,
+				"python.testing.unittestEnabled": true,
+				"python.formatting.provider": "black",
+				"python.linting.mypyEnabled": true,
 				"python.formatting.blackPath": "/usr/local/bin/black",
 				"python.linting.flake8Path": "/usr/local/bin/flake8",
 				"python.linting.isortPath": "/usr/local/bin/isort",
